@@ -37,7 +37,7 @@ def read_temp_sensor1():
         dataFile_sensor1 = open('/home/thijs/HAB/trunk/sensor code/results/sensor1.txt', 'a')
         lines = read_temp_raw_sensor1()
         while lines[0].strip()[-3:] != 'YES':
-                time.sleep(0.2)
+                time.sleep(5)
                 lines = read_temp_raw_sensor1()
         equals_pos = lines[1].find('t=')
         if equals_pos != -1:
@@ -50,7 +50,7 @@ def read_temp_sensor2():
         dataFile_sensor2 = open('/home/thijs/HAB/trunk/sensor code/results/sensor2.txt', 'a')
         lines = read_temp_raw_sensor2()
         while lines[0].strip()[-3:] != 'YES':
-                time.sleep(0.2)
+                time.sleep(5)
                 lines = read_temp_raw_sensor2()
         equals_pos = lines[1].find('t=')
         if equals_pos != -1:
