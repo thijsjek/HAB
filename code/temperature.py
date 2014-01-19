@@ -4,10 +4,10 @@ import time
 import subprocess
 import datetime
 
-dataFile_sensor1 = open('/home/thijs/HAB/code/results/sensor1.txt', 'a')
+dataFile_sensor1 = open('/home/thijs/HAB/code/results/sensor1.txt', 'a') #creating sensor1.txt
 dataFile_sensor2 = open('/home/thijs/HAB/code/results/sensor2.txt', 'a')
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
+os.system('modprobe w1-gpio') #Initializing the sensors
+os.system('modprobe w1-therm') 
 
 #Sensor 28-0000052c5567
 base_dir_sensor1 = '/sys/bus/w1/devices/'
@@ -43,7 +43,7 @@ def read_temp_sensor1():
         if equals_pos != -1:
                 temp_string = lines[1][equals_pos+2:]
                 temp_c = float(temp_string) / 1000.0
-                dataFile_sensor1.write(str(temp_c)+ " "+ str(datetime.datetime.now())+";"+'\t'+'\n')
+                dataFile_sensor1.write(str(temp_c)+ " "+ str(datetime.datetime.now())+";"+'\t'+'\n') #output format in sensor1.txt
                 return temp_c
 
 def read_temp_sensor2():
@@ -65,4 +65,4 @@ while True:
         read_temp_sensor2()
         dataFile_sensor1.close()
         dataFile_sensor2.close()
-        time.sleep(300)
+        time.sleep(300) #sleep time in seconds
