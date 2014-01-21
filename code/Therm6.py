@@ -55,6 +55,6 @@ def read_temp_sensor():
         dataFile_sensor.write(str(datetime.datetime.now().time())+ ","+ str(temp_c_1)+","+ str(temp_c_2)+'\n')
 
 while True:
-        read_temp_sensor()
-        dataFile_sensor.close()
+        print read_temp_sensor()
+	dataFile_sensor.close()
         time.sleep(30)
