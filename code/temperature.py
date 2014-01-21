@@ -43,7 +43,7 @@ def read_temp_sensor1():
         if equals_pos != -1:
                 temp_string = lines[1][equals_pos+2:]
                 temp_c = float(temp_string) / 1000.0
-                dataFile_sensor1.write(str(datetime.datetime.now)+ ","+ str(temp_c())+'\n') #output format in sensor1.csv
+                dataFile_sensor1.write(str(datetime.datetime.now())+ ","+ str(temp_c)+'\n') #output format in sensor1.csv
                 return temp_c
 
 def read_temp_sensor2():
@@ -56,7 +56,7 @@ def read_temp_sensor2():
         if equals_pos != -1:
                 temp_string = lines[1][equals_pos+2:]
                 temp_c = float(temp_string) / 1000.0
-                dataFile_sensor2.write(str(datetime.datetime.now)+ ","+ str((temp_c))+'\n') #output format in sensor1.csv
+                dataFile_sensor2.write(str(datetime.datetime.now())+ ","+ str(temp_c))+'\n') #output format in sensor1.csv
                 return temp_c
 
 	
