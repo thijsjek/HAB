@@ -51,7 +51,7 @@ def read_temp_sensor():
         if equals_pos_2 != -1:
                 temp_string = lines_2[1][equals_pos_2+2:]
                 temp_c_2 = float(temp_string) / 1000.0
-                return temp_c_2
+                
         dataFile_sensor.write(str(datetime.datetime.now().time())+ ","+ str(temp_c_1)+","+ str(temp_c_2)+'\n')
 
 while True:
