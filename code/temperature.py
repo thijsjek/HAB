@@ -65,4 +65,4 @@ while True:
         read_temp_sensor2()
         dataFile_sensor1.close() #closing the file
         dataFile_sensor2.close() #closing the file
-        time.sleep(300) #sleep time in seconds
+        time.sleep(30) #sleep time in seconds
