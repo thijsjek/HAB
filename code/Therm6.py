@@ -33,7 +33,7 @@ def read_temp_raw_sensor2():
 	return lines_2
 
 def read_temp_sensor():
-        dataFile_sensor = open('Opslaan voor sensor', 'a')
+        dataFile_sensor = open('/home/thijs/HAB/code/results/temperature.csv', 'a')
         lines_1 = read_temp_raw_sensor1()
         lines_2 = read_temp_raw_sensor2()
         while lines_1[0].strip()[-3:] != 'YES':
@@ -52,9 +52,9 @@ def read_temp_sensor():
                 temp_string = lines_2[1][equals_pos_2+2:]
                 temp_c_2 = float(temp_string) / 1000.0
                 return temp_c_2
-        dataFile_sensor.write(str(temp_c_1)+ ","+ str(temp_c_2)+","+ str(datetime.datetime.now().time())+'\n')
+        dataFile_sensor.write(str(datetime.datetime.now().time())+ ","+ str(temp_c_1)+","+ str(temp_c_2)+'\n')
 
 while True:
         read_temp_sensor()
         dataFile_sensor.close()
-        time.sleep(1)
+        time.sleep(30)
