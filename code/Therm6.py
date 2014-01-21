@@ -48,7 +48,7 @@ def read_temp_sensor():
                 temp_c_1 = float(temp_string) / 1000.0
                 return temp_c_1
         equals_pos_2 = lines_2[1].find('t=')
-        if equals_pos != -1:
+        if equals_pos_2 != -1:
                 temp_string = lines_2[1][equals_pos_2+2:]
                 temp_c_2 = float(temp_string) / 1000.0
                 return temp_c_2
