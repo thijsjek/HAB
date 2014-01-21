@@ -43,7 +43,7 @@ while True:
         if equals_pos != -1:
                 temp_string = lines[1][equals_pos+2:]
                 temp_c1 = float(temp_string) / 1000.0
-                dataFile_sensor.write(str(temp_c1)+ ",")
+                dataFile_sensor.write(str(datetime.datetime.now().time())+","+str(temp_c1)+ ",")
         lines = read_temp_raw_sensor2()
         while lines[0].strip()[-3:] != 'YES':
                 time.sleep(0.2)
@@ -52,9 +52,9 @@ while True:
         if equals_pos != -1:
                 temp_string = lines[1][equals_pos+2:]
                 temp_c2 = float(temp_string) / 1000.0
-                dataFile_sensor.write(str(temp_c2)+","+ str(datetime.datetime.now().time())+'\n') 
+                dataFile_sensor.write(str(temp_c2)+'\n') 
         dataFile_sensor.close()
-        time.sleep(1)
+        time.sleep(30)
 
 
 
