@@ -50,15 +50,8 @@ if __name__ == '__main__':
             print "track ", gpsc.fix.track
             print "mode ", gpsc.fix.mode
             print "sats ", gpsc.satellites
-        except:
-        print "Unexpected error:", sys.exc_info()[0]
-        raise
-
-    #Ctrl C
-    except KeyboardInterrupt:
-        print "User cancelled"
-
-    finally:
+            
+     except:
         print "Stopping gps controller"
         gpsc.stopController()
         #wait for the tread to finish
