@@ -50,8 +50,7 @@ if __name__ == '__main__':
             print "track ", gpsc.fix.track
             print "mode ", gpsc.fix.mode
             print "sats ", gpsc.satellites
-            time.sleep(0.5)
-
+            time.sleep(20)
     #Error
     except:
         print "Unexpected error:", sys.exc_info()[0]
