@@ -4,7 +4,7 @@ import time
 import subprocess
 import datetime
 
-dataFile_sensor = open('/HAB/code/results/temperature.csv', 'a')
+dataFile_sensor = open('/home/pi/HAB/code/results/temperature.csv', 'a')
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
@@ -34,7 +34,7 @@ def read_temp_raw_sensor2():
 
 
 while True:
-        dataFile_sensor = open('/HAB/code/results/temperature.csv', 'a')
+        dataFile_sensor = open('/home/pi/HAB/code/results/temperature.csv', 'a')
         lines = read_temp_raw_sensor1()
         while lines[0].strip()[-3:] != 'YES':
                 time.sleep(0.2)
