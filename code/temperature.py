@@ -8,9 +8,9 @@ dataFile_sensor = open('/home/pi/HAB/code/results/temperature.csv', 'a')
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
-#Sensor 28-0000052c5567
+#Sensor 28-000004ce9b41
 base_dir_sensor1 = '/sys/bus/w1/devices/'
-device_folder_sensor1 = glob.glob(base_dir_sensor1 + '28-0000052c5567')[0]
+device_folder_sensor1 = glob.glob(base_dir_sensor1 + '28-000004ce9b41')[0]
 device_file_sensor1 = device_folder_sensor1 + '/w1_slave'
 #Sensor 28-0000052cc99d
 base_dir_sensor2 = '/sys/bus/w1/devices/'
