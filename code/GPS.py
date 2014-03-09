@@ -52,8 +52,8 @@ if __name__ == '__main__':
             print "mode ", gpsc.fix.mode
             print "sats ", gpsc.satellites
             dataFile_GPS.write(gpsc.fix.latitude +"\t"+ gpsc.fix.longitude +"\t"+ gpsc.utc + " + " + gpsc.fix.time +"\t"+ gpsc.fix.altitude +"\t"+ gpsc.fix.eps +"\t"+ gpsc.fix.epv +"\t"+ gpsc.gpsd.fix.ept+"\t"+ gpsc.fix.speed  + gpsc.fix.climb +"\t"+ gpsc.fix.climb +"\t"+ gpsc.fix.track +"\t"+ gpsc.fix.mode +"\t"+ gpsc.satellites +"\t"+'\n')
-            dataFile_GPS.close()
-     except:
+            dataFile_sensor.close()
+    except:
         print "Stopping gps controller"
         gpsc.stopController()
         #wait for the tread to finish
