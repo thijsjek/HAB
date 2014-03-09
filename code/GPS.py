@@ -2,6 +2,7 @@ from gps import *
 import time
 import threading
 import math
+dataFile_GPS = open('Opslaglocatie GPS', 'a')
 
 class GpsController(threading.Thread):
     def __init__(self):
@@ -50,7 +51,8 @@ if __name__ == '__main__':
             print "track ", gpsc.fix.track
             print "mode ", gpsc.fix.mode
             print "sats ", gpsc.satellites
-            
+            dataFile_GPS.write(gpsc.fix.latitude +"\t"+ gpsc.fix.longitude +"\t"+ gpsc.utc + " + " + gpsc.fix.time +"\t"+ gpsc.fix.altitude +"\t"+ gpsc.fix.eps +"\t"+ gpsc.fix.epv +"\t"+ gpsc.gpsd.fix.ept+"\t"+ gpsc.fix.speed  + gpsc.fix.climb +"\t"+ gpsc.fix.climb +"\t"+ gpsc.fix.track +"\t"+ gpsc.fix.mode +"\t"+ gpsc.satellites +"\t"+'\n')
+            dataFile_GPS.close()
      except:
         print "Stopping gps controller"
         gpsc.stopController()
