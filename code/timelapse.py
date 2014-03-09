@@ -63,7 +63,7 @@ initMins = "%02d" % (d.minute)
 # Define the location where you wish to save files. Set to HOME as default. 
 # If you run a local web server on Apache you could set this to /var/www/ to make them 
 # accessible via web browser.
-folderToSave = "/home/pi/timelape/" + str(initYear) + str(initMonth) + str(initDate) + str(initHour) + str(initMins)
+folderToSave = "/home/pi/tl/" + "timelapse_" + str(initYear) + str(initMonth) + str(initDate) + str(initHour) + str(initMins)
 os.mkdir(folderToSave)
 
 # Set the initial serial for saved images to 1
