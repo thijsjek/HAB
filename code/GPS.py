@@ -2,7 +2,7 @@ from gps import *
 import time
 import threading
 import math
-dataFile_GPS = open('Opslaglocatie GPS', 'a')
+dataFile_GPS = open('/home/pi/HAB/code/results/gps.csv', 'a')
 
 class GpsController(threading.Thread):
     def __init__(self):
