@@ -6,6 +6,8 @@ session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
  
 while True:
 	try:
+                time.sleep(30)
+                dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 		report = session.next()
 		# Wait for a 'TPV' report and display the current time
 		# To see all report data, uncomment the line below
@@ -17,12 +19,23 @@ while True:
                               report.lon,
                               report.lat,
                               report.alt,
-                              report.ept,
                               report.epx,
                               report.epv,
                               report.epy,
                               report.climb,
-                              report.tag)
+                              report,device)
+                        dataFile_sensor.write(
+                              report.time,
+                              report.speed * gps.MPS_TO_KPH,
+                              report.lon,
+                              report.lat,
+                              report.alt,
+                              report.epx,
+                              report.epv,
+                              report.epy,
+                              report.climb,
+                              report,device)
+                        dataFile_sensor.close()
 	except KeyError:
 		pass
 	except KeyboardInterrupt:
