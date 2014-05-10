@@ -24,7 +24,7 @@ while True:
                         epy = report.epy
                         climb = report.climb
                         device = report.device
-                        dataFile_sensor.write(str(time) + str(speed) + str(lon))
+                        dataFile_sensor.write(str(time), + str(speed), + str(lon))
                         dataFile_sensor.close()
                       
 	except KeyError:
