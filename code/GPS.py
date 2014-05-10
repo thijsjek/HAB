@@ -25,15 +25,15 @@ while True:
                               report.climb,
                               report.device)
                         dataFile_sensor.write(
-                              report.time,
-                              report.speed * gps.MPS_TO_KPH,
-                              report.lon,
-                              report.lat,
-                              report.alt,
-                              report.epx,
-                              report.epv,
-                              report.epy,
-                              report.climb,
+                              report.time +
+                              report.speed * gps.MPS_TO_KPH +
+                              report.lon +
+                              report.lat +
+                              report.alt +
+                              report.epx +
+                              report.epv +
+                              report.epy +
+                              report.climb +
                               report.device)
                         dataFile_sensor.close()
 	except KeyError:
