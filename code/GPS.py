@@ -21,4 +21,3 @@ while True:
             climb = report.climb
             dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
             dataFile_sensor.close()
-            time.sleep(5)
