@@ -12,7 +12,16 @@ while True:
 		# print report
 		if report['class'] == 'TPV':
 		    if hasattr(report, 'time'):
-                        print(report.time, report.speed * gps.MPS_TO_KPH, )
+                        print(report.time,
+                              report.speed * gps.MPS_TO_KPH,
+                              report.lon,
+                              report.lat,
+                              report.alt,
+                              report.ept,
+                              report.epx,
+                              report.eps,
+                              report.climb,
+                              report.tag)
 	except KeyError:
 		pass
 	except KeyboardInterrupt:
@@ -20,3 +29,4 @@ while True:
 	except StopIteration:
 		session = None
 		print "GPSD has terminated"
+
