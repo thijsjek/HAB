@@ -1,7 +1,7 @@
 import gps
 import time
 dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
-dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+"\n")
+dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+"climb"+"latitute"+"altitute"+"\n")
 # Listen on port 2947 (gpsd) of localhost
 session = gps.gps("localhost", "2947")
 session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
@@ -25,7 +25,7 @@ while True:
                         epy = report.epy
                         climb = report.climb
                         device = report.device
-                        dataFile_sensor.write(str(time) + "," + str(speed) + "," + str(lon)+ "\n")
+                        dataFile_sensor.write(str(time) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "," + str(epx)+ "," + str(epy)+ "," + str(epv)+ "\n")
                         dataFile_sensor.close()
                       
 	except KeyError:
