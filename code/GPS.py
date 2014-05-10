@@ -11,6 +11,7 @@ while True:
 		# To see all report data, uncomment the line below
 		# print report
 		if report['class'] == 'TPV':
+		    if hasattr(report, 'time'):
                         print(report.time, report.speed * gps.MPS_TO_KPH, )
 	except KeyError:
 		pass
