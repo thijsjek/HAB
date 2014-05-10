@@ -1,8 +1,9 @@
 import gps
 import time
+
 dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+","+"climb"+","+"latitute"+","+"altitute"+"\n")
-# Listen on port 2947 (gpsd) of localhost
+
 session = gps.gps("localhost", "2947")
 session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
  
@@ -11,9 +12,6 @@ while True:
 	try:
                 dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 		report = session.next()
-		# Wait for a 'TPV' report and display the current time
-		# To see all report data, uncomment the line below
-		# print report
 		if report['class'] == 'TPV':
 		    if hasattr(report, 'time'):
                         gpstime = report.time
@@ -28,7 +26,7 @@ while True:
                         device = report.device
                         dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
                         dataFile_sensor.close()
-                time.sleep(10)         
+                        time.sleep(5)         
 	except KeyError:
 		pass
 	except KeyboardInterrupt:
