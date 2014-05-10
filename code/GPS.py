@@ -9,7 +9,7 @@ session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
  
 while True:
     dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
-    report = session.next()
+    report = session.next(5)
     if report['class'] == 'TPV':
         if hasattr(report, 'time'):
             gpstime = report.time
@@ -23,6 +23,4 @@ while True:
             climb = report.climb
             device = report.device
             dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
-            dataFile_sensor.close()
-            time.sleep(5)
-        
+            dataFile_sensor.close() 
