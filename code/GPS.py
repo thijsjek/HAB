@@ -8,7 +8,6 @@ dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+","+"climb"+","+"latit
  
 while True:
     dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
-    time.sleep(5)
     session = gps.gps("localhost", "2947")
     session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
     report = session.next()
@@ -21,4 +20,5 @@ while True:
             alt = report.alt
             climb = report.climb
             dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
-            dataFile_sensor.close() 
+            dataFile_sensor.close()
+            time.sleep(5)
