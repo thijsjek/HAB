@@ -34,15 +34,3 @@ while True:
 	except StopIteration:
 		session = None
 		print "GPSD has terminated"
-
-dataFile_sensor.write(
-                              report.time +
-                              report.speed * gps.MPS_TO_KPH +
-                              report.lon +
-                              report.lat +
-                              report.alt +
-                              report.epx +
-                              report.epv +
-                              report.epy +
-                              report.device)
-                        dataFile_sensor.close()
