@@ -14,17 +14,28 @@ while True:
 		# print report
 		if report['class'] == 'TPV':
 		    if hasattr(report, 'time'):
-                        print(report.time,
-                              report.speed * gps.MPS_TO_KPH,
-                              report.lon,
-                              report.lat,
-                              report.alt,
-                              report.epx,
-                              report.epv,
-                              report.epy,
-                              report.climb,
-                              report.device)
-                        dataFile_sensor.write(
+                        time = report.time
+                        speed = report.speed* gps.MPS_TO_KPH
+                        lon = report.lon
+                        lat = report.lat
+                        alt = report.alt
+                        epx = report.epx
+                        epv = report.epv
+                        epy = report.epy
+                        climb = report.climb
+                        device = report.device
+                        dataFile_sensor.write(time + speed + lon)
+                        dataFile_sensor.close()
+                      
+	except KeyError:
+		pass
+	except KeyboardInterrupt:
+		quit()
+	except StopIteration:
+		session = None
+		print "GPSD has terminated"
+
+dataFile_sensor.write(
                               report.time +
                               report.speed * gps.MPS_TO_KPH +
                               report.lon +
@@ -35,11 +46,3 @@ while True:
                               report.epy +
                               report.device)
                         dataFile_sensor.close()
-	except KeyError:
-		pass
-	except KeyboardInterrupt:
-		quit()
-	except StopIteration:
-		session = None
-		print "GPSD has terminated"
-
