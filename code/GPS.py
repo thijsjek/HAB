@@ -19,7 +19,8 @@ while True:
                               report.alt,
                               report.ept,
                               report.epx,
-                              report.eps,
+                              report.epv,
+                              report.epy,
                               report.climb,
                               report.tag)
 	except KeyError:
