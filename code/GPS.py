@@ -23,7 +23,7 @@ while True:
                               report.epv,
                               report.epy,
                               report.climb,
-                              report,device)
+                              report.device)
                         dataFile_sensor.write(
                               report.time,
                               report.speed * gps.MPS_TO_KPH,
@@ -34,7 +34,7 @@ while True:
                               report.epv,
                               report.epy,
                               report.climb,
-                              report,device)
+                              report.device)
                         dataFile_sensor.close()
 	except KeyError:
 		pass
