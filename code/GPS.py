@@ -16,7 +16,7 @@ while True:
 		# print report
 		if report['class'] == 'TPV':
 		    if hasattr(report, 'time'):
-                        time = report.time
+                        gpstime = report.time
                         speed = report.speed* gps.MPS_TO_KPH
                         lon = report.lon
                         lat = report.lat
@@ -26,7 +26,7 @@ while True:
                         epy = report.epy
                         climb = report.climb
                         device = report.device
-                        dataFile_sensor.write(str(time) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
+                        dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
                         dataFile_sensor.close()
                 time.sleep(10)         
 	except KeyError:
