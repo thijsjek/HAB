@@ -7,7 +7,7 @@ session = gps.gps("localhost", "2947")
 session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
  
 while True:
-    time.sleep(10)
+        time.sleep(10)
 	try:
                 dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 		report = session.next()
