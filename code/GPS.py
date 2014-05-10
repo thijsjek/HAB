@@ -3,13 +3,13 @@ import time
 
 dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+","+"climb"+","+"latitute"+","+"altitute"+"\n")
-
+session = gps.gps("localhost", "2947")
+session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
+print(session.timeout())
 
  
 while True:
     dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
-    session = gps.gps("localhost", "2947")
-    session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
     report = session.next()
     if report['class'] == 'TPV':
         if hasattr(report, 'time'):
