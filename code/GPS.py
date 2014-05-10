@@ -33,7 +33,6 @@ while True:
                               report.epx +
                               report.epv +
                               report.epy +
-                             str(report.climb) +
                               report.device)
                         dataFile_sensor.close()
 	except KeyError:
