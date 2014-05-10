@@ -1,13 +1,14 @@
 import gps
 import time
- 
+dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
+dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+"+\n")
+dataFile_sensor.close()
 # Listen on port 2947 (gpsd) of localhost
 session = gps.gps("localhost", "2947")
 session.stream(gps.WATCH_ENABLE | gps.WATCH_NEWSTYLE)
  
 while True:
 	try:
-                dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
 		report = session.next()
 		# Wait for a 'TPV' report and display the current time
 		# To see all report data, uncomment the line below
