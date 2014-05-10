@@ -12,7 +12,7 @@ while True:
 		# print report
 		if report['class'] == 'TPV':
 			if hasattr(report, 'time') and  hasattr(report, 'speed'):
-				print report.time, ',', report.speed * gps.MPS_TO_KPH    
+				print report.time,',',report.speed * gps.MPS_TO_KPH    
 	except KeyError:
 		pass
 	except KeyboardInterrupt:
