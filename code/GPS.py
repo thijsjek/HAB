@@ -13,11 +13,11 @@ while True:
     report = session.next()
     if report['class'] == 'TPV':
         if hasattr(report, 'time'):
-            gpstime = report.time
+            time = report.time
             speed = report.speed* gps.MPS_TO_KPH
             lon = report.lon
             lat = report.lat
             alt = report.alt
             climb = report.climb
-            dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
+            dataFile_sensor.write(str(time) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
             dataFile_sensor.close()
