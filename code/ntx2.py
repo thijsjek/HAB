@@ -133,7 +133,7 @@ def read_gps():
     callsign = "Kanters_Test"
         
         
-    string = str((callsign) + ',' + time + ',' + str(counter) + ',' + str(latitude) + ',' + str(longitude) + ',' + satellites + ',' + str(trigger) + ',' + str(altitude)) # the data string
+    string = str((callsign) + ',' + str(time) + ',' + str(counter) + ',' + str(latitude) + ',' + str(longitude) + ',' + str(satellites) + ',' + str(trigger) + ',' + str(altitude)) # the data string
     csum = str(hex(crc16f(string))).upper()[2:] # running the CRC-CCITT checksum
     csum = csum.zfill(4) # creating the checksum data
     datastring = str("$$" + string + "*" + csum + "\n") # appending the datastring as per the UKHAS communication protocol
