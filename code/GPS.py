@@ -21,7 +21,6 @@ while True:
             epv = report.epv
             epy = report.epy
             climb = report.climb
-            device = report.device  
-            dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n"
+            device = report.device
+            dataFile_sensor.write(str(gpstime) + "," + str(speed) + "," + str(lon)+"," + str(climb)+ "," + str(lat)+ "," + str(alt)+ "\n")
             dataFile_sensor.close()
-    
