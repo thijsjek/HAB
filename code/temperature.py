@@ -5,6 +5,7 @@ import subprocess
 import datetime
 
 dataFile_sensor = open('/home/pi/HAB/code/results/temperature.csv', 'a')
+dataFile_sensor.write("datum/tijd"+","+"uitwendig"+","+"inwendig"+"\n")
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
 
