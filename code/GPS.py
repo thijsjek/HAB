@@ -1,7 +1,7 @@
 import gps
 import time
 
-dataFile_sensor = open('/home/pi/HAB/code/results/gps.csv', 'a')
+dataFile_sensor = open('/home/pi/data.csv', 'a')
 dataFile_sensor.write("time"+","+"speed"+","+"longtitude"+","+"climb"+","+"latitute"+","+"altitute"+"\n")
 
 session = gps.gps("localhost", "2947")
