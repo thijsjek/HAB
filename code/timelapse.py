@@ -94,8 +94,8 @@ while True:
         # Increment the fileSerial
         fileSerial += 1
         
-        # Wait 60 seconds (1 minute) before next capture
-        time.sleep(60)
+        # Wait 30 seconds before next capture
+        time.sleep(30)
         
     else:
         
