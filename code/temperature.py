@@ -19,27 +19,3 @@ while True:
 	print "internal temperature = %.0f Celsius" % (temp1)
 	print "external temperature = %.0f Celsius" % (temp2)
 	time.sleep(30) 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
